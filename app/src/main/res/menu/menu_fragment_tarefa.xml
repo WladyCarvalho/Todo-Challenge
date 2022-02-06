@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:iconTint="@color/light_primary"
+        android:title="Pesquisar"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView"/>
+
+    <item
+        android:icon="@drawable/ic_baseline_sort_24"
+        android:iconTint="@color/light_primary"
+        android:title="Ordenar"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/action_sort_by_name"
+                android:title="Ordenar pelo nome"/>
+            <item
+                android:id="@+id/action_sort_by_date_created"
+                android:title="Ordenar por data de criação"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_hide_completed_tasks"
+        android:checkable="true"
+        android:title="Esconder completas"
+        android:icon="@drawable/ic_baseline_check_24"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_delete_all_completed_tasks"
+        android:checkable="true"
+        android:title="Eliminar todas completas"
+        app:showAsAction="never"/>
+
+</menu>

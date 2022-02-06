@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tarefas">
+
+    <fragment
+        android:id="@+id/addEditTarefa"
+        android:name="com.expressive.todo_challenge.ui.add_editar_tarefa.AddEditTarefa"
+        android:label="{tag}"
+        tools:layout="@layout/add_edit_tarefa_fragment" >
+        <action
+            android:id="@+id/action_addEditTarefa_to_tarefas"
+            app:destination="@id/tarefas" />
+        <argument
+            android:name="tarefa"
+            app:argType="com.expressive.todo_challenge.dado.model.Tarefa"
+            app:nullable="true" />
+        <argument
+            android:name="tag"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/tarefas"
+        android:name="com.expressive.todo_challenge.ui.tarefas.Tarefas"
+        android:label="Tarefas"
+        tools:layout="@layout/tarefas_fragment" >
+        <action
+            android:id="@+id/action_tarefas_to_addEditTarefa"
+            app:destination="@id/addEditTarefa" />
+        <argument
+            android:name="tarefa"
+            app:argType="com.expressive.todo_challenge.dado.model.Tarefa"
+            app:nullable="true" />
+        <argument
+            android:name="tag"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tarefas_to_deleteAllCompletedDialogFragment"
+            app:destination="@id/deleteAllCompletedDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/deleteAllCompletedDialogFragment"
+        android:name="com.codinginflow.mvvmtodo.ui.delete_all_completed.DeleteAllCompletedDialogFragment"
+        android:label="DeleteAllCompletedDialogFragment" />
+</navigation>
